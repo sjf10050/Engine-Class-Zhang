@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger2Config {
     @Bean
     public Docket buildDocket() {
-        return  new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())//调用下面apiInfo()方法
                 .select()
                 //Controller所在路径
@@ -32,7 +32,7 @@ public class Swagger2Config {
     }
 
     public ApiInfo apiInfo() {
-        return  new ApiInfoBuilder()
+        return new ApiInfoBuilder()
                 .title("springboot结合swagger2构建Restful API")
                 .description("这是一个swagger2小型demo")
                 .termsOfServiceUrl("localhost:8080")
@@ -40,5 +40,4 @@ public class Swagger2Config {
                 .build();
 
     }
-
 }
