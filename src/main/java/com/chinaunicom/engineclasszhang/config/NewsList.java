@@ -4,6 +4,7 @@ import com.chinaunicom.engineclasszhang.entity.News;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,6 +39,7 @@ public class NewsList {
             news.setId(i);
             news.setTitle("title:" + i);
             news.setContext("hhhh");
+            news.setCreateDate(new Date());
             this.newsList.add(news);
         }
     }
