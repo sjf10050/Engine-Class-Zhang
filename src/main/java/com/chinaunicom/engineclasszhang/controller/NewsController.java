@@ -1,5 +1,6 @@
 package com.chinaunicom.engineclasszhang.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.chinaunicom.engineclasszhang.config.NewsList;
 import com.chinaunicom.engineclasszhang.entity.News;
 import io.swagger.annotations.*;
@@ -52,5 +53,14 @@ public class NewsController {
                               @RequestBody News news) {
         newsList.getNewsList().set(newsId, news);
         return 1;
+    }
+
+
+    //Fastjson使用
+    @PostMapping(value = "json")
+    public void getJson(@RequestBody JSONObject jsonObject){
+        System.out.println(jsonObject.getString("userId"));
+        System.out.println(jsonObject.getInteger("age"));
+        System.out.println(jsonObject.getObject("ids",List.class).get(0));//Java反射机制
     }
 }
