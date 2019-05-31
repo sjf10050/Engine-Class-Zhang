@@ -33,9 +33,9 @@ public class Swagger2Config {
 
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot结合swagger2构建Restful API")
-                .description("这是一个swagger2小型demo")
-                .termsOfServiceUrl("localhost:8080")
+                .title("China Unicom Industry IoT")
+                .description("全连接工厂")
+                .termsOfServiceUrl("localhost:9080")
                 .version("0.0.1")
                 .build();
 

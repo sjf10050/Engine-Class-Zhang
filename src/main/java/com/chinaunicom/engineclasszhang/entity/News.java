@@ -8,15 +8,24 @@ package com.chinaunicom.engineclasszhang.entity;
  * @Description News entity
  */
 public class News {
-    private String name;
+    private Integer id;
+    private String title;
     private String context;
 
-    public String getName() {
-        return name;
+    public Integer getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContext() {
