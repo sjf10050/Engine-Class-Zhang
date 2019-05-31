@@ -5,7 +5,7 @@ package com.chinaunicom.engineclasszhang.entity;
  * @Author sjf
  * @mail sjf10050@outlook.com
  * @Date 2019-05-31 11:44
- * @Description TODO
+ * @Description News entity
  */
 public class News {
     private String name;
