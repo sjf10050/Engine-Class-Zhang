@@ -1,6 +1,7 @@
 package com.chinaunicom.engineclasszhang.controller;
 
 import com.chinaunicom.engineclasszhang.entity.News;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
