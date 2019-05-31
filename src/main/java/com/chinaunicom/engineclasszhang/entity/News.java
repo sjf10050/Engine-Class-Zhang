@@ -1,5 +1,8 @@
 package com.chinaunicom.engineclasszhang.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * @ClassName News
  * @Author sjf
@@ -7,8 +10,10 @@ package com.chinaunicom.engineclasszhang.entity;
  * @Date 2019-05-31 11:44
  * @Description News entity
  */
+@ApiModel(value = "News",description = "新闻实体")
 public class News {
     private Integer id;
+    @ApiModelProperty(value = "新闻标题",required = false)
     private String title;
     private String context;
 

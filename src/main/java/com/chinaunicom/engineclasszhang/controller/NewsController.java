@@ -2,9 +2,7 @@ package com.chinaunicom.engineclasszhang.controller;
 
 import com.chinaunicom.engineclasszhang.config.NewsList;
 import com.chinaunicom.engineclasszhang.entity.News;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,17 +29,28 @@ public class NewsController {
     }
 
     @ApiOperation(value = "获取指定新闻")
-    @GetMapping(value = "/detail/{newsId}")
-    @ApiImplicitParam(name = "newsId",value = "新闻编号",dataType ="Integer",required =true)
+    @GetMapping(value = "detail/{newsId}")
+    @ApiImplicitParam(name = "newsId", value = "新闻编号", dataType = "Integer", required = true)
     public News getNewsDetail(@PathVariable(name = "newsId") Integer newsId) {
         return newsList.getNewsById(newsId);
     }
 
     @ApiOperation(value = "新增新闻")
-    @PostMapping(value = "/addNews")
-    public Integer addNews(@RequestBody News news){
+    @PostMapping(value = "addNews")
+    public Integer addNews(@RequestBody @ApiParam(name = "新闻实体",required = true) News news) {
         newsList.getNewsList().add(news);
-        return 0;
+        return 1;
+    }
 
+    @ApiOperation(value = "修改新闻")
+    @PutMapping(value = "update/{newsId}")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "news", value = "新闻类型", required = true,dataType = "News"),
+            @ApiImplicitParam(name = "newsId", value = "新闻编号", required = true,dataType ="Integer")
+    })
+    public Integer updateNews(@PathVariable(name = "newsId") Integer newsId,
+                              @RequestBody News news) {
+        newsList.getNewsList().set(newsId, news);
+        return 1;
     }
 }
